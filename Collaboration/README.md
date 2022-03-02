@@ -13,5 +13,4 @@ analysis on 10% of total scientific papers which is reported in the
 supplementary information (SI).  \\
 
 ## Run
-Early preprocessing requires a function installation of Spark/PySpark,
-otherwise the code relies on python.
+All code run on google colab. 
