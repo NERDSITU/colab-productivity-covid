@@ -2,7 +2,22 @@
 
 ## MAG (Spark setup on HPC)
 
+The MAG is supplied my Microsoft Academic as a directory of text-files, some of which are large (+50 gb). We use Spark SQL to interface with the MAG dataset for certain queries in the data curation process. The implementation allows for easy adaptation to various Spark environments, for instance on cloud services. As such, the technical infrastructure can be easily scaled up and down according to available resources. 
+
+The use of Spark SQL over native PySpark methods is aimed at providing an interface with the MAG dataset which is convenient for people familiar with relational databases. With a little adaptation, the queries used should be able to run on other relational databases, such as MySQL or PostgreSQL. 
+
+
 ## Files
+
+**MicrosoftAcademicGraph**   
+Located in `MAG.py`, this class is a modification of code provided by Microsoft to access the MAG in an Azure environment. 
+Its main responsibility is loading datasets stored in text-files as Spark DataFrames to be accessed with Pyspark and Spark SQL.  
+This class takes a Pyspark SparkSession instance in its constructor. 
+
+**MAGspark.py**  
+This file defines the Spark configuration used to access files with Pyspark. It allows for a single-node client as well as a cluster setup with multiple nodes.
+
+
 
 ### Main Files 
 
