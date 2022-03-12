@@ -13,7 +13,7 @@ from pyspark.sql.types import *
 
 class MicrosoftAcademicGraph(object):
   # constructor
-  def __init__(self, spark, data_folderpath="/home/vicp/data/2021-08-02"):
+  def __init__(self, spark, data_folderpath="/home/vicp/data/mag2021_12_06"):
     # AzureStorageAccess.__init__(self, container, account, sas, key) 
     self.data_folderpath = data_folderpath
     self.spark = spark
@@ -56,7 +56,7 @@ class MicrosoftAcademicGraph(object):
     return df 
 
   def saveFile(self, df, folderName, fileName): 
-    destination = f"/home/vicp/data/2021-08-02/{folderName}/{fileName}"
+    destination = f"/home/vicp/data/mag2021_12_06/{folderName}/{fileName}"
     df.write.option("sep", "\t").option("encoding", "UTF-8")\
     .csv(destination)
 

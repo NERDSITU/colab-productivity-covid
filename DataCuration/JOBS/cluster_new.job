@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#BATCH -J sparkcluster
+#SBATCH -t 1410 # runtime to request !!! in minutes !!!
+#SBATCH --output=/home/vicp/reform-psychology/MAG-data-curation/JOB_OUTPUTS/job.%j.out 
+#SBATCH --cpus-per-task=4        # Schedule 8 cores (includes hyperthreading)
+#SBATCH --time=23:30:00          # Run time (hh:mm:ss) - run for one hour max
+#SBATCH -N 4
+#SBATCH --ntasks-per-core=1
+
+# setup the spark paths
+
+echo "Running on $(hostname):"
+
+rm /home/vicp/spark-3.0.3-bin-hadoop2.7/conf/spark-env.sh #not necessary
+echo -e '#!/usr/bin/env bash \n\nSPARK_MASTER_HOST='"$(hostname -I)" > "/home/vicp/spark-3.0.3-bin-hadoop2.7/conf/spark-env.sh"
+
+module load Anaconda3
+. $(conda info --base)/etc/profile.d/conda.sh
+conda activate nerdenv3
+
+python /home/vicp/reform-psychology/MAG-data-curation/clusterscript.py
+
+conda deactivate

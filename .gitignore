@@ -1,0 +1,4 @@
+/DataCuration/JOB_OUTPUTS/*
+!/DataCuration/JOB_OUTPUTS/.gitkeep
+/DataCuration/TMP/*
+!/DataCuration/TMP/.gitkeep

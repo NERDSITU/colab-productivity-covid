@@ -11,7 +11,7 @@ from sparkhpc import sparkjob
 import findspark
 
 # set environment variables
-os.environ["SPARK_LOCAL_DIRS"] = "/home/vicp/TMP"
+os.environ["SPARK_LOCAL_DIRS"] = "/home/vicp/colab-productivity-covid/DataCuration/TMP"
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64"
 os.environ['SPARK_HOME'] = "/home/vicp/spark-3.0.3-bin-hadoop2.7"
 
@@ -55,7 +55,7 @@ def get_node_client(executor_memory="24g"): # 2g driver memory before.
 
 
 def get_mag_with_cluster_connection(jobid, memory_per_executor=16000, # 16000
-                                    data_folderpath="/home/vicp/data/2021-08-02/"):
+                                    data_folderpath="/home/vicp/data/mag2021_12_06/"):
 
     spark = get_cluster_client(jobid, memory_per_executor=memory_per_executor)
     mag = MicrosoftAcademicGraph(spark=spark, data_folderpath=data_folderpath)
