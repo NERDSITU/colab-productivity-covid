@@ -94,7 +94,17 @@ class MicrosoftAcademicGraph(object):
     'Papers' : ('mag/Papers.txt', ['PaperId:long', 'Rank:uint', 'Doi:string', 'DocType:string', 'PaperTitle:string', 'OriginalTitle:string', 'BookTitle:string', 'Year:int?', 'Date:DateTime?', 'OnlineDate:DateTime?', 'Publisher:string', 'JournalId:long?', 'ConferenceSeriesId:long?', 'ConferenceInstanceId:long?', 'Volume:string', 'Issue:string', 'FirstPage:string', 'LastPage:string', 'ReferenceCount:long', 'CitationCount:long', 'EstimatedCitation:long', 'OriginalVenue:string', 'FamilyId:long?', 'FamilyRank:uint?', 'CreatedDate:DateTime']),
     'RelatedFieldOfStudy' : ('advanced/RelatedFieldOfStudy.txt', ['FieldOfStudyId1:long', 'Type1:string', 'FieldOfStudyId2:long', 'Type2:string', 'Rank:float']),
     
-### all doctypes (early preprocessing) ###
+### prepare variables ###
+
+'GenderizedFirstnames': ('datacuration/GenderizedFirstnames.txt', ['Firstname:string', 'Country:string?', 'gender:string?', 'probability:float?', 'count:int?', 'genderized:int']),
+
+'PaperRootField': ('datacuration/PaperRootField.txt', ['PaperId:long', 'FieldOfStudyId:long', 'IsStem:int']),
+
+'AuthorCountries': ('datacuration/AuthorCountries.txt', ['AuthorId:long', 'DisplayName:string', 'Country:string?']),
+
+'AuthorsGenderized': ('datacuration/AuthorsGenderized.txt', ['AuthorId:long', 'DisplayName:string', 'Country:string?', 'Gender:string?', 'Genderized:int?']), 
+
+### collect data ###
 
 'ProjectAuthorsAllDocType': ('datacuration/ProjectAuthorsAllDocType.txt', ['AuthorId:long', 'DisplayName:string', 'Country:string?', 'Gender:string?', 'Genderized:int?', 'MinDate:DateTime?', 'MinDateStem:DateTime?']),
 
@@ -131,7 +141,6 @@ class MicrosoftAcademicGraph(object):
 'PaperAuthorAffiliationsAttributesRepo': ('datacuration/PaperAuthorAffiliationsAttributesRepo.txt', ['PaperId:long', 'AuthorId:long', 'Date:DateTime?', 'Gender:int', 'ScientificAge:float?', 'CountryCode:string?', 'DocType:string?', 'FieldOfStudyId:long', 'NormalizedName:string']),
 
 'PaperAuthorAffiliationsAttributesNoFilter': ('datacuration/PaperAuthorAffiliationsAttributesNoFilter.txt', ['PaperId:long', 'AuthorId:long', 'Date:DateTime?', 'Gender:int', 'ScientificAge:float?', 'CountryCode:string?', 'DocType:string?', 'FieldOfStudyId:long', 'NormalizedName:string']),
-
 
 ### (sanity checks) ###
 

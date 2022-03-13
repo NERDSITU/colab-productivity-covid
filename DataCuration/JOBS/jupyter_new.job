@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task 8
 #SBATCH --time 23:30:00
 #SBATCH --job-name jupyter-notebook
-#SBATCH --output /home/vicp/reform-psychology/MAG-data-curation/JOB_OUTPUTS/jupyter-notebook-%J.log
+#SBATCH --output /home/vicp/colab-productivity-covid/DataCuration/JOB_OUTPUTS/jupyter-notebook-%J.log
 # get tunneling info
 XDG_RUNTIME_DIR=""
 port=$(shuf -i8000-9999 -n1)
