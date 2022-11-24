@@ -2,8 +2,7 @@
 
 The code in this repository is divided in following sub directories:
 - Productivity
-- Collaboration
-- NPI
+- DataCuration
 
 Each folder contain scripts in Python and Jupyter Notebooks used to produce
 the plots and analysis reported in the article.
@@ -15,4 +14,5 @@ wide spread python libraries already included in the Anaconda distribution.
 This software was tested on Anaconda version `4.10.1` containing Python version
 `3.8.8`.
 
-The data to reproduced the analyses in the paper can be obtained from:
+The data to reproduced the analyses in the paper can be obtained from:  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6257468.svg)](https://doi.org/10.5281/zenodo.6257468)
